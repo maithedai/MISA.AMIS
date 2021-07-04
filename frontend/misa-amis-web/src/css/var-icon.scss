@@ -1,0 +1,125 @@
+@mixin make-property($property, $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+      #{$prefix}#{$property}: $value;
+    }
+  }
+
+@mixin setIcon($icon-name, $icon-width, $icon-height, $icon-color, $icon-posX, $icon-posY, $icon-link) {
+  .#{$icon-name} {
+    width: $icon-width;
+    height: $icon-height;
+    @include make-property(mask-image, $icon-link);
+    @include make-property(mask-position, $icon-posX $icon-posY);
+    @include make-property(mask-repeat, no-repeat);
+    background-color: $icon-color !important;
+  }
+
+};
+
+// set icon mà không quan tâm đến màu
+@mixin setIconWithoutColor($icon-name, $icon-width, $icon-height, $icon-posX, $icon-posY, $icon-link) {
+  .#{$icon-name} {
+    width: $icon-width;
+    height: $icon-height;
+    @include make-property(mask-image, $icon-link);
+    @include make-property(mask-position, $icon-posX $icon-posY);
+    @include make-property(mask-repeat, no-repeat);
+  }
+
+};
+
+// set icon lấy màu mặc định
+@mixin setIconWithDefaultColor($icon-name, $icon-width, $icon-height, $icon-posX, $icon-posY, $icon-link) {
+  .#{$icon-name} {
+    width: $icon-width;
+    height: $icon-height;
+    background: $icon-link $icon-posX $icon-posY no-repeat;
+  }
+};
+
+//Bộ icon 1
+$link-icon1: url("../assets/Resource/img/Icon.svg");
+
+@include setIconWithDefaultColor('icon-three-line',24px,24px,-843px,-30px,$link-icon1);
+@include setIconWithDefaultColor('icon-three-line-white',24px,24px,-312px,-32px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-menu',16px,16px,-428px,-92px,$link-icon1);
+
+
+//Icon side bar menu
+//Icon Tổng quan
+@include setIconWithDefaultColor('icon-dashboard',20px,20px,-33px,-1630px,$link-icon1);
+@include setIconWithDefaultColor('icon-dashboard-active',20px,20px,-33px,-1587px,$link-icon1);
+
+//Icon Tiền mặt
+@include setIconWithDefaultColor('icon-money',20px,20px,-78px,-1631px,$link-icon1);
+@include setIconWithDefaultColor('icon-money-active',20px,20px,-78px,-1588px,$link-icon1);
+
+//Icon Tiền gửi
+@include setIconWithDefaultColor('icon-deposits',20px,20px,-121px,-1633px,$link-icon1);
+@include setIconWithDefaultColor('icon-deposits-active',20px,20px,-121px,-1590px,$link-icon1);
+
+//Icon mua hàng
+@include setIconWithDefaultColor('icon-buy',20px,20px,-165px,-1632px,$link-icon1);
+@include setIconWithDefaultColor('icon-buy-active',20px,20px,-165px,-1589px,$link-icon1);
+
+//Icon bán hàng
+@include setIconWithDefaultColor('icon-sell',20px,20px,-208px,-1631px,$link-icon1);
+@include setIconWithDefaultColor('icon-sell-active',20px,20px,-206px,-1588px,$link-icon1);
+
+//Icon quản lý hóa đơn
+@include setIconWithDefaultColor('icon-bill',20px,20px,-254px,-1632px,$link-icon1);
+@include setIconWithDefaultColor('icon-bill-active',20px,20px,-254px,-1589px,$link-icon1);
+
+//Icon kho
+@include setIconWithDefaultColor('icon-store',20px,20px,-294px,-1632px,$link-icon1);
+@include setIconWithDefaultColor('icon-store-active',20px,20px,-294px,-1589px,$link-icon1);
+
+//Icon công cụ
+@include setIconWithDefaultColor('icon-tool',20px,20px,-339px,-1633px,$link-icon1);
+@include setIconWithDefaultColor('icon-tool-active',20px,20px,-339px,-1590px,$link-icon1);
+
+//Icon tài sản
+@include setIconWithDefaultColor('icon-asset',20px,20px,-382px,-1632px,$link-icon1);
+@include setIconWithDefaultColor('icon-asset-active',20px,20px,-382px,-1589px,$link-icon1);
+
+//Icon thuế
+@include setIconWithDefaultColor('icon-tax',20px,20px,-427px,-1634px,$link-icon1);
+@include setIconWithDefaultColor('icon-tax-active',20px,20px,-427px,-1591px,$link-icon1);
+
+//Icon giá thành
+@include setIconWithDefaultColor('icon-price',20px,20px,-471px,-1633px,$link-icon1);
+@include setIconWithDefaultColor('icon-price-active',20px,20px,-471px,-1590px,$link-icon1);
+
+//Icon tổng hợp
+@include setIconWithDefaultColor('icon-synthetic',20px,20px,-514px,-1632px,$link-icon1);
+@include setIconWithDefaultColor('icon-synthetic-active',20px,20px,-514px,-1590px,$link-icon1);
+
+//Icon ngân sách
+@include setIconWithDefaultColor('icon-budget',20px,20px,-121px,-1633px,$link-icon1);
+@include setIconWithDefaultColor('icon-budget-active',20px,20px,-121px,-1590px,$link-icon1);
+
+//Icon báo cáo
+@include setIconWithDefaultColor('icon-report',20px,20px,-552px,-1636px,$link-icon1);
+@include setIconWithDefaultColor('icon-report-active',20px,20px,-552px,-1593px,$link-icon1);
+
+//Icon báo cáo
+@include setIconWithDefaultColor('icon-finance',20px,20px,-207px,-1667px,$link-icon1);
+@include setIconWithDefaultColor('icon-finance-active',20px,20px,-251px,-1667px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-noti',22px,25px,-788px,-30px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-avt',22px,25px,-352px,-894px,$link-icon1);
+
+@include setIconWithDefaultColor('nav-drop',10px,5px,-467px,-414px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-nav-drop',14px,8px,-1129px,-365px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-search',16px,16px,-317px,-148px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-reload',21px,23px,-425px,-201px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-export',23px,20px,-705px,-202px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-help',22px,22px,-89px,-145px,$link-icon1);
+@include setIconWithDefaultColor('icon-close',18px,18px,-147px,-147px,$link-icon1);
