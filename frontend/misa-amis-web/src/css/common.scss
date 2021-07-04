@@ -12,6 +12,11 @@
     font-family: notosans-italic;
     src: url('../assets/Resource/fonts/notosans-italic.1c1aaac9.woff2');
 }
+
+@font-face {
+  font-family: notosans-semibold;
+  src: url('../assets/Resource/fonts/notosans-semibold.df3e6dc4.woff2');
+}
  
 * {
     font-family: notosans-regular;
@@ -60,7 +65,7 @@ body {
 }
 
 .text-lable {
-    font-family: notosans-regular;
+    font-family: notosans-semibold;
     font-size: 13px;
     color: #454545;
 }
@@ -96,10 +101,8 @@ input {
     height: 28px !important;
     outline: none;
     border: 1px solid #ccc;
-}
-
-input:focus {
-  border: 1px solid #2ca01c;
+    border-radius: 3px;
+    padding-left: 8px;
 }
 
 /* css cho v-tooltip */
@@ -228,4 +231,16 @@ input:focus {
 
 .m-r-24{
   margin-right: 24px;
+}
+
+.m-b-4 {
+  margin-bottom: 4px;
+}
+
+.m-b-16 {
+  margin-bottom: 16px;
+}
+
+.m-b-24 {
+  margin-bottom: 24px;
 }

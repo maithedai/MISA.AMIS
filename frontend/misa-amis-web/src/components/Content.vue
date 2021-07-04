@@ -7,10 +7,7 @@
             </div>
             <div class="content-body">
                 <div class="bo-header">
-                    <div class="input-search m-r-24">
-                        <input class="search" type="text" placeholder="Tìm theo mã, tên nhân viên">
-                        <div class="icon-search"></div>
-                    </div>
+                    <Input v-model="value" cssClass="m-r-24" type="search"></Input>
                     <div class="icon-reload m-r-24"></div>
                     <div class="icon-export"></div>
                 </div>
@@ -23,10 +20,16 @@
 <script>
 
 import FormDeatil from '../components/FormDetai.vue'
-
+import Input from '@/components/common/Input.vue'
 export default {
     components: {
-        FormDeatil
+        FormDeatil,
+        Input
+    },
+    data() {
+        return {
+            value: ""
+        }
     },
     methods: {
 
@@ -95,23 +98,6 @@ export default {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                
-                .input-search {
-                    width: 240px;
-                    height: 32px;
-                    position: relative;
-
-                    .search {
-                        width: 100%;
-                        height: 100%;
-                    }
-
-                    .icon-search {
-                        position: absolute;
-                        right: 0px;
-                        top: 10px;
-                    }                   
-                }          
             }
         }
     }

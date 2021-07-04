@@ -2,14 +2,14 @@
     <div class="nav-bar">
         <div class="nav-bar-left">
             <div v-if="isSideBarOpen" class="icon-three-line pointer m-r-16" @click="closeSideBar"></div>
-            <div class="name-company m-r-10">CÔNG TY TNHH SẢN XUẤT - THƯƠNG MẠI - DỊCH VỤ</div>
+            <div class="text-lable name-company m-r-10">CÔNG TY TNHH SẢN XUẤT - THƯƠNG MẠI - DỊCH VỤ</div>
             <div class="icon-nav-drop"></div>
         </div>
         <div class="nav-bar-right">
             <div class="icon-noti"></div>
             <div class="profile">
                 <div class="icon-avt m-r-8"></div>
-                <div class="user-name m-r-8">Mai Thế Đại</div>
+                <div class="text-lable user-name m-r-8">Mai Thế Đại</div>
             </div>
             <div class="nav-drop"></div>
         </div>

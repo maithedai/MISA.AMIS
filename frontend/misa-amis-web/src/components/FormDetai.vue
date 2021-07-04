@@ -19,33 +19,145 @@
                     <div class="icon-close"></div>
                 </div>
             </div>
-            <div class="form-body">
-                <div class="persion-info">
+            <div class="form-body m-b-24">
+                <div class="persion-info m-b-24">
                     <div class="info-left">
-                        <div class="info-line-1">
-                            <label>Mã<span style="color: red; margin-left: 4px">*</span></label>   
+                        <div class="info-line m-b-16">
+                            <div class="input-info input-code">
+                                <label class="text-lable m-b-4">Mã<span style="color: red; margin-left: 4px">*</span></label>   
+                                <input FieldName="EmployeeCode" type="text">
+                            </div>
+                            <div class="input-info input-name">
+                                <label class="text-lable m-b-4">Tên<span style="color: red; margin-left: 4px">*</span></label>   
+                                <input FieldName="EmployeeName" type="text">
+                            </div>
                         </div>
-                        <div class="info-line-2"></div>
-                        <div class="info-line-3"></div>
+                        <div class="info-line info-line-item m-b-16">
+                            <label class="text-lable">Đơn vị<span style="color: red; margin-left: 4px">*</span></label>   
+                            <ComboBox
+                                v-bind:customDataDropDown="department_dropdown"
+                                FieldName="Department"
+                                style="width: 100%; height: 32px;">
+                            </ComboBox>
+                        </div>
+                        <div class="info-line info-line-item">
+                            <label class="text-lable">Chức danh</label>   
+                            <input FieldName="Job" type="text">
+                        </div>
                          
                     </div>
-                    <div class="info-right"></div>                
+                    <div class="info-right">
+                        <div class="info-r-line m-b-16">
+                            <div class="input-info input-date-birth">
+                                <label class="text-lable m-b-4">Ngày sinh<span style="color: red; margin-left: 4px">*</span></label>   
+                                <input FieldName="EmployeeCode" type="date">
+                            </div>
+                             <div class="input-info input-gender">
+                                <label class="text-lable m-b-4">Giới tính<span style="color: red; margin-left: 4px">*</span></label>   
+                                <div class="value-gender">
+                                    <div class="value-gender-item m-r-16">                                        
+                                        <input FieldName="EmployeeCode" type="radio" style="width: 18px">
+                                        <label class="text-lable">Nam</label>  
+                                    </div>
+                                    <div class="value-gender-item m-r-16">                                          
+                                        <input FieldName="EmployeeCode" type="radio" style="width: 18px">
+                                        <label class="text-lable">Nữ</label>
+                                    </div>
+                                    <div class="value-gender-item">                                        
+                                        <input FieldName="EmployeeCode" type="radio" style="width: 18px">
+                                        <label class="text-lable">Khác</label> 
+                                    </div>         
+                                </div>                                                      
+                            </div>
+                        </div>    
+                        <div class="info-r-line m-b-16">
+                            <div class="input-info input-cmt">
+                                <label class="text-lable m-b-4">Số CMND</label>   
+                                <input FieldName="EmployeeCode" type="text">
+                            </div>    
+                            <div class="input-info input-date-cmt">
+                                <label class="text-lable m-b-4">Ngày cấp</label>   
+                                <input FieldName="EmployeeCode" type="date" style="width: 170px; height: 32px">
+                            </div>    
+                        </div> 
+                        <div class="info-r-line">
+                            <div class="input-info">
+                                <label class="text-lable m-b-4">Nơi cấp</label>   
+                                <input FieldName="EmployeeCode" type="text" style="width: 432px">
+                            </div>                           
+                        </div> 
+                    </div>                
                 </div> 
-                <div class="address"></div>
-                <div class="contact"></div>        
+                <div class="address input-info m-b-16">
+                    <label class="text-lable m-b-4">Địa chỉ</label>   
+                    <input FieldName="EmployeeCode" type="text" style="width: 840px;">
+                </div>
+                <div class="contact" style="margin-bottom: 48px;">
+                    <div class="contact-item m-b-16">
+                        <div class="con-item-line m-r-8">
+                            <label class="text-lable m-b-4">ĐT di động</label>   
+                            <input FieldName="EmployeeCode" type="text" style="width: 200px">
+                        </div>
+                        <div class="con-item-line m-r-8">
+                            <label class="text-lable m-b-4">ĐT cố định</label>   
+                            <input FieldName="EmployeeCode" type="text" style="width: 200px">
+                        </div>
+                        <div class="con-item-line m-r-8">
+                            <label class="text-lable m-b-4">Email</label>   
+                            <input FieldName="EmployeeCode" type="text" style="width: 200px">
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                         <div class="con-item-line m-r-8">
+                            <label class="text-lable m-b-4">Tài khoản ngân hàng</label>   
+                            <input FieldName="EmployeeCode" type="text" style="width: 200px">
+                        </div>
+                        <div class="con-item-line m-r-8">
+                            <label class="text-lable m-b-4">Tên ngân hàng</label>   
+                            <input FieldName="EmployeeCode" type="text" style="width: 200px">
+                        </div>
+                        <div class="con-item-line m-r-8">
+                            <label class="text-lable m-b-4">Chi nhánh</label>   
+                            <input FieldName="EmployeeCode" type="text" style="width: 200px">
+                        </div>
+                    </div>
+                </div>   
+                <div class="line-border"></div>     
             </div>
-            <div class="form-content-footer"></div>
+            
+            <div class="form-content-footer">
+                <div class="button-cancel" style="margin-left: 24px;">Hủy</div>
+                <div class="button-right">
+                    <div class="button-save">Cất</div>
+                    <div class="button-save-add">Cất và thêm</div>
+                </div>
+            </div>
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
 
-export default {
+import ComboBox from '../components/common/ComboBox.vue'
 
+export default {
+    components: {
+        ComboBox
+    },
     data() {
         return {
-            isShowFormDetail: false
+            isShowFormDetail: false,
+            department_dropdown:[
+                {
+                    data_text:'Phòng nhân sự',
+                },
+                {
+                    data_text:'Phòng hành chính',
+                },
+                {
+                    data_text:'Phòng nghiến cứu',
+                }
+            ],  
         }
     },
     methods: {
@@ -141,8 +253,140 @@ export default {
 
     .form-body {
         width: 100%;
-        height: 400px;
+        height: 460px;
         padding: 0 24px 0 24px;
+
+        .persion-info {
+            width: calc(100% - 48px);
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+
+            .info-left {
+                width: 46%;
+                height: 100%;
+
+                .info-line {
+                    width: 100%;
+                    height: 53px;
+                    display: flex;
+                    justify-content: space-between;                                     
+                }
+
+                .info-line-item {
+                    display: flex;
+                    flex-direction: column;        
+                }
+            }
+
+            .info-right {
+                width: 52%;
+                height: 100%;              
+            }
+        }
     }
+}
+
+.input-info  {
+    display: flex;
+    flex-direction: column;                       
+} 
+
+.input-code {
+    width: 150px;                           
+}
+
+.input-name {
+    width: 235px;
+}
+
+input:focus {
+  border: 1px solid #2ca01c !important;
+}
+
+.input-date-birth {
+    width: 160px;
+}
+
+.info-r-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-gender {
+    width: 250px;
+}
+
+.value-gender {
+    display: flex;
+    align-items: center;
+
+    .value-gender-item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+    }
+}
+
+.input-cmt {
+    width: 250px;
+}
+
+.contact {
+    width: 660px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-around;
+}
+
+.line-border {
+    width: 850px;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.form-content-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-cancel {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 36px;
+    width: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-right {
+    display: flex;  
+    width: 215px;
+    justify-content: space-between;
+}
+
+.button-save {
+    height: 36px;
+    width: 67px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc
+}
+
+.button-save-add {
+    height: 38px;
+    display: flex;
+    padding-right: 16px;
+    padding-left: 16px;
+    align-items: center;
+    background-color: #2ca01c;
+    border-radius: 3px;
+    color: #fff;
+    margin-right: 24px;
 }
 </style>
