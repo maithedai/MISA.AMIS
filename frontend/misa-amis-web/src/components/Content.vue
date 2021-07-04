@@ -78,7 +78,7 @@ export default {
             }
 
             .button-add:hover {
-                background-color: #86bd7f;
+                background-color: #35bf22;
             }
 
         }

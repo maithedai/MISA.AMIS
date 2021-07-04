@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-tool">
                     <div class="icon-help m-r-10"></div>
-                    <div class="icon-close"></div>
+                    <div class="icon-close" @click="closeFormDetail"></div>
                 </div>
             </div>
             <div class="form-body m-b-24">
@@ -126,26 +126,31 @@
             </div>
             
             <div class="form-content-footer">
-                <div class="button-cancel" style="margin-left: 24px;">Hủy</div>
+                <div class="button-cancel" style="margin-left: 24px;" @click="closeFormDetail">Hủy</div>
                 <div class="button-right">
                     <div class="button-save">Cất</div>
                     <div class="button-save-add">Cất và thêm</div>
                 </div>
             </div>
         </div>
+        <FormConfirm ref="FormConfirm" :type="type" :message="message" @acceptCloseFormDetail="acceptCloseFormDetail"/>
     </div>
 </template>
 
 <script>
 
 import ComboBox from '../components/common/ComboBox.vue'
+import FormConfirm from '../components/Dialog/FormConfirm.vue'
 
 export default {
     components: {
-        ComboBox
+        ComboBox,
+        FormConfirm
     },
     data() {
         return {
+            type: "error",
+            message: "Dữ liệu bị thay đổi. Bạn có muốn cất không?",
             isShowFormDetail: false,
             department_dropdown:[
                 {
@@ -167,7 +172,24 @@ export default {
          */
         showFormDeatil() {
             this.isShowFormDetail = true;
-        }
+        },
+
+        /**
+         * Hàm khi click buttn x để đóng formdetail
+         * MTDAI 05.07.2021
+         */
+        closeFormDetail() {
+            this.$refs.FormConfirm.showFormConfirm();
+            this.type = 'conf';
+        },
+
+        /**
+         * Hàm khi người dùng accept đóng form detail
+         * MTDAI 05.07.2021
+         */
+        acceptCloseFormDetail() {
+            this.isShowFormDetail = false;
+        },
     }
 };
 </script>
@@ -353,13 +375,18 @@ input:focus {
 }
 
 .button-cancel {
-    border: 1px solid #ccc;
+    border: 1px solid #8d9096;
     border-radius: 3px;
     height: 36px;
-    width: 67px;
+    padding-left: 24px;
+    padding-right: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.button-cancel:hover {
+    background-color: #d2d3d6;
 }
 
 .button-right {
@@ -370,12 +397,17 @@ input:focus {
 
 .button-save {
     height: 36px;
-    width: 67px;
+    padding-left: 24px;
+    padding-right: 24px;
     border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc
+    border: 1px solid #8d9096
+}
+
+.button-save:hover {
+    background-color: #d2d3d6;
 }
 
 .button-save-add {
@@ -389,4 +421,9 @@ input:focus {
     color: #fff;
     margin-right: 24px;
 }
+
+.button-save-add:hover {
+    background-color: #35bf22;
+}
+
 </style>

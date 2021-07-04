@@ -123,3 +123,6 @@ $link-icon1: url("../assets/Resource/img/Icon.svg");
 
 @include setIconWithDefaultColor('icon-help',22px,22px,-89px,-145px,$link-icon1);
 @include setIconWithDefaultColor('icon-close',18px,18px,-147px,-147px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-conf',36px,36px,-832px,-462px,$link-icon1);
+

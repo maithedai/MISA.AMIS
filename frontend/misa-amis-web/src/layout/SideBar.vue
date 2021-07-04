@@ -6,7 +6,7 @@
             <div v-if="!isSideBarOpen" class="icon-three-line-white pointer" @click="openSideBar"></div>
         </div>
         <div class="list-item">
-            <div :class="['item',{'active': item.Active}]" v-for="(item,index) in listItem" :key="index">
+            <div :class="['item',{'active': item.Active}]" v-for="(item,index) in listItem" :key="index" @click="activeListItem(item)">
                 <div :class="[item.Active ? item.IconActive : item.Icon,'m-r-8']"></div>
                 <div v-if="isSideBarOpen">{{item.Name}}</div>
             </div>
@@ -28,7 +28,7 @@ export default {
                     Icon: 'icon-money',
                     IconActive:"icon-money-active",
                     Name: 'Tiền mặt',
-                    Active: true
+                    Active: false
                 },
                 {
                     Icon: 'icon-deposits',
@@ -112,13 +112,36 @@ export default {
         }
     },
     computed: {
+        /**
+         * Hàm khi thu nhỏ siderbar
+         * MTDAI 05.07.2021
+         */
         isSideBarOpen(){
             return this.$store.getters.isSideBarOpen;
         }
     },
     methods: {
+        /**
+         * Hàm khi phóng to siderbar
+         * MTDAI 05.07.2021
+         */
         openSideBar(){
             this.$store.dispatch('common/setIsSideBarOpen', true);
+        },
+
+        /**
+         * Hàm khi click active vào list menu item
+         * MTDAI 05.07.2021
+         */
+        activeListItem(item){
+            //Active item được chọn
+            item.Active = true
+            // Nếu không phải là item thì không Active
+            for(let index of this.listItem) {
+                if(index != item) {
+                    index.Active = false;
+                }
+            }
         }
     }
 }
